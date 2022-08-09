@@ -15,17 +15,7 @@ export default function Dashboard(props) {
     }
 
     return (
-        <Authenticated
-            auth={props.auth}
-            errors={props.errors}
-            header={
-                {
-                    /*<h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Announcements
-                    </h2> */
-                }
-            }
-        >
+        <Authenticated auth={props.auth} errors={props.errors} header={<></>}>
             <Head title="Announcements" />
 
             <div className="py-12">
