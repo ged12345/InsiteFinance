@@ -53,7 +53,14 @@ export default function Dashboard(props) {
                                 </thead>
                                 <tbody>
                                     {announcements.map(
-                                        ({ id, title, body }) => (
+                                        ({
+                                            id,
+                                            title,
+                                            content,
+                                            startDate,
+                                            endDate,
+                                            active,
+                                        }) => (
                                             <tr>
                                                 <td className="border px-4 py-2">
                                                     {id}

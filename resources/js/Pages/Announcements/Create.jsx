@@ -3,7 +3,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Head, useForm, Link } from "@inertiajs/inertia-react";
 
 export default function Dashboard(props) {
-    const { data, setData, errors, announcement } = useForm({
+    const { data, setData, errors, post } = useForm({
         title: "",
         content: "",
         startDate: "",
@@ -13,7 +13,7 @@ export default function Dashboard(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        announcement(route("announcements.store"));
+        post(route("announcements.store"));
     }
 
     return (
@@ -79,10 +79,10 @@ export default function Dashboard(props) {
                                             {errors.body}
                                         </span>
                                     </div>
-                                    <div className="mb-0">
+                                    <div className="mb-2">
                                         <label className="">Start Date</label>
-                                        <textarea
-                                            type="text"
+                                        <input
+                                            type="date"
                                             className="w-full rounded"
                                             label="start-date"
                                             name="start-date"
@@ -99,10 +99,10 @@ export default function Dashboard(props) {
                                             {errors.body}
                                         </span>
                                     </div>
-                                    <div className="mb-0">
+                                    <div className="mb-2">
                                         <label className="">End Date</label>
-                                        <textarea
-                                            type="text"
+                                        <input
+                                            type="date"
                                             className="w-full rounded"
                                             label="end-date"
                                             name="end-date"
