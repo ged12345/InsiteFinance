@@ -21,16 +21,17 @@ export default function Authenticated({ auth, header, children }) {
                                 </Link>
                             </div>
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink
+                                {/* <NavLink
                                     href={route("dashboard")}
                                     active={route().current("dashboard")}
                                 >
                                     Dashboard
-                                </NavLink>
+                                </NavLink> */}
+
                                 <NavLink
                                     href={route("announcements.index")}
                                     active={route().current(
-                                        "announcementss.index"
+                                        "announcements.index"
                                     )}
                                 >
                                     Announcements
@@ -129,10 +130,10 @@ export default function Authenticated({ auth, header, children }) {
                 >
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
-                            href={route("dashboard")}
-                            active={route().current("dashboard")}
+                            href={route("announcements.index")}
+                            active={route().current("announcements.index")}
                         >
-                            Dashboard
+                            Announcements
                         </ResponsiveNavLink>
                     </div>
 

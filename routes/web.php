@@ -16,7 +16,9 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-Route::resource('announcements', AnnouncementController::class);
+Route::resource('announcements', AnnouncementController::class,  ['names' => 'announcements']);
+Route::get('announcements/index','AnnouncementController@index')->name("announcements.index");
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -27,8 +29,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+/*Route::get('/announcements', function () {
+    return Inertia::render('Announcements/Index');
+})->middleware(['auth', 'verified'])->name('announcements');*/
 
 require __DIR__.'/auth.php';

@@ -6,6 +6,8 @@ import { Head, usePage, Link } from "@inertiajs/inertia-react";
 export default function Dashboard(props) {
     const { announcements } = usePage().props;
 
+    console.log(usePage());
+
     function destroy(e) {
         if (confirm("Are you sure you want to delete this user?")) {
             Inertia.delete(route("announcements.destroy", e.currentTarget.id));
@@ -17,9 +19,11 @@ export default function Dashboard(props) {
             auth={props.auth}
             errors={props.errors}
             header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+                {
+                    /*<h2 className="font-semibold text-xl text-gray-800 leading-tight">
                     Announcements
-                </h2>
+                    </h2> */
+                }
             }
         >
             <Head title="Announcements" />
