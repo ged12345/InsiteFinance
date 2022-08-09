@@ -17,8 +17,8 @@ class CreateAnnouncementsTable extends Migration
             $table->id();
             $table->string("title");
             $table->string("content");
-            $table->date("startDate");
-            $table->date("endDate");
+            $table->date("startDate")->default('');
+            $table->date("endDate")->default('');
             $table->boolean("active");
             $table->timestamps();
         });
