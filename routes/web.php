@@ -17,7 +17,10 @@ use App\Http\Controllers\AnnouncementController;
 */
 
 Route::resource('announcements', AnnouncementController::class,  ['names' => 'announcements']);
-Route::get('announcements/index','AnnouncementController@index')->name("announcements.index");
+
+Route::get('index',[AnnouncementController::class, 'index'])->name("announcements.main-index");
+
+Route::get('public',[AnnouncementController::class, 'index2'])->name("announcements.main-index2");
 
 
 Route::get('/', function () {
@@ -28,9 +31,5 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
-/*Route::get('/announcements', function () {
-    return Inertia::render('Announcements/Index');
-})->middleware(['auth', 'verified'])->name('announcements');*/
 
 require __DIR__.'/auth.php';

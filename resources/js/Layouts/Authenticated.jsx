@@ -29,9 +29,9 @@ export default function Authenticated({ auth, header, children }) {
                                 </NavLink> */}
 
                                 <NavLink
-                                    href={route("announcements.index")}
+                                    href={route("announcements.main-index")}
                                     active={route().current(
-                                        "announcements.index"
+                                        "announcements.main-index"
                                     )}
                                 >
                                     Announcements

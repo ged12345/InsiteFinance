@@ -21,6 +21,17 @@ class AnnouncementController extends Controller
     }
 
     /**
+     * Show the form for public show.
+     *
+     * @return Public
+     */
+    public function index2()
+    {
+        $announcements = Announcement::all();
+        return Inertia::render('Announcements/Public', ['announcements' => $announcements]);
+    }
+
+    /**
      * Write code on Method
      *
      * @return response()

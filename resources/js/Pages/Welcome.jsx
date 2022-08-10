@@ -32,6 +32,12 @@ export default function Welcome(props) {
                             >
                                 Register
                             </Link>
+                            <Link
+                                href={route("announcements.main-index2")}
+                                className="ml-4 text-sm text-gray-700 underline"
+                            >
+                                Public Announcements
+                            </Link>
                         </>
                     </div>
                 </div>

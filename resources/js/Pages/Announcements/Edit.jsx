@@ -48,7 +48,7 @@ export default function Dashboard(props) {
                                         <label className="">Title</label>
                                         <input
                                             type="text"
-                                            className="w-full px-4 py-2"
+                                            className="w-full px-3 py-2 border-gray-300 border rounded-md"
                                             label="Title"
                                             name="title"
                                             value={data.title}
@@ -60,11 +60,11 @@ export default function Dashboard(props) {
                                             {errors.title}
                                         </span>
                                     </div>
-                                    <div className="mb-0">
+                                    <div className="mb-4">
                                         <label className="">Content</label>
                                         <textarea
                                             type="text"
-                                            className="w-full rounded"
+                                            className="w-full rounded px-3 py-2 border-gray-300 border rounded-md"
                                             label="content"
                                             name="content"
                                             errors={errors.content}
@@ -80,11 +80,11 @@ export default function Dashboard(props) {
                                             {errors.body}
                                         </span>
                                     </div>
-                                    <div className="mb-0">
+                                    <div className="mb-4">
                                         <label className="">Start Date</label>
-                                        <textarea
-                                            type="text"
-                                            className="w-full rounded"
+                                        <input
+                                            type="date"
+                                            className="w-full rounded px-3 py-2 border-gray-300 border rounded-md"
                                             label="start-date"
                                             name="end-date"
                                             errors={errors.startDate}
@@ -100,11 +100,11 @@ export default function Dashboard(props) {
                                             {errors.body}
                                         </span>
                                     </div>
-                                    <div className="mb-0">
+                                    <div className="mb-4">
                                         <label className="">End Date</label>
-                                        <textarea
-                                            type="text"
-                                            className="w-full rounded"
+                                        <input
+                                            type="date"
+                                            className="w-full rounded px-3 py-2 border-gray-300 border rounded-md"
                                             label="end-date"
                                             name="end-date"
                                             errors={errors.endDate}
@@ -120,11 +120,11 @@ export default function Dashboard(props) {
                                             {errors.body}
                                         </span>
                                     </div>
-                                    <div className="mb-0">
+                                    <div className="mb-4">
                                         <label className="">Active</label>
-                                        <textarea
+                                        <input
                                             type="text"
-                                            className="w-full rounded"
+                                            className="w-full rounded px-3 py-2 border-gray-300 border rounded-md"
                                             label="active"
                                             name="active"
                                             errors={errors.active}

@@ -13,6 +13,15 @@ export default function Dashboard(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
+
+        if (
+            Date.parse(data.startDate) <= Date.now() &&
+            Date.parse(data.endDate) >= Date.now()
+        ) {
+            setData("active", true);
+        } else {
+            setData("active", false);
+        }
         post(route("announcements.store"));
     }
 
@@ -47,7 +56,7 @@ export default function Dashboard(props) {
                                         <label className="">Title</label>
                                         <input
                                             type="text"
-                                            className="w-full px-4 py-2"
+                                            className="w-full px-3 py-2 border-gray-300 border rounded-md"
                                             label="Title"
                                             name="title"
                                             value={data.title}
@@ -59,11 +68,11 @@ export default function Dashboard(props) {
                                             {errors.title}
                                         </span>
                                     </div>
-                                    <div className="mb-0">
+                                    <div className="mb-4">
                                         <label className="">Content</label>
                                         <textarea
                                             type="text"
-                                            className="w-full rounded"
+                                            className="w-full rounded px-3 py-2 border-gray-300 border rounded-md"
                                             label="content"
                                             name="content"
                                             errors={errors.content}
@@ -79,11 +88,11 @@ export default function Dashboard(props) {
                                             {errors.body}
                                         </span>
                                     </div>
-                                    <div className="mb-2">
+                                    <div className="mb-4">
                                         <label className="">Start Date</label>
                                         <input
                                             type="date"
-                                            className="w-full rounded"
+                                            className="w-full rounded px-3 py-2 border-gray-300 border rounded-md"
                                             label="start-date"
                                             name="start-date"
                                             errors={errors.startDate}
@@ -99,11 +108,11 @@ export default function Dashboard(props) {
                                             {errors.body}
                                         </span>
                                     </div>
-                                    <div className="mb-2">
+                                    <div className="mb-4">
                                         <label className="">End Date</label>
                                         <input
                                             type="date"
-                                            className="w-full rounded"
+                                            className="w-full rounded px-3 py-2 border-gray-300 border rounded-md"
                                             label="end-date"
                                             name="end-date"
                                             errors={errors.endDate}
@@ -111,26 +120,6 @@ export default function Dashboard(props) {
                                             onChange={(e) =>
                                                 setData(
                                                     "endDate",
-                                                    e.target.value
-                                                )
-                                            }
-                                        />
-                                        <span className="text-red-600">
-                                            {errors.body}
-                                        </span>
-                                    </div>
-                                    <div className="mb-0">
-                                        <label className="">Active</label>
-                                        <textarea
-                                            type="text"
-                                            className="w-full rounded"
-                                            label="active"
-                                            name="active"
-                                            errors={errors.active}
-                                            value={data.active}
-                                            onChange={(e) =>
-                                                setData(
-                                                    "active",
                                                     e.target.value
                                                 )
                                             }
